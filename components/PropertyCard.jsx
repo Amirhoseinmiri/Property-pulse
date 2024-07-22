@@ -56,12 +56,16 @@ const PropertyCard = ({ property }) => {
         </div>
 
         <div className="flex justify-center gap-4 text-green-900 text-sm mb-4">
-          <p>
-            <FaMoneyBill /> Weekly
-          </p>
-          <p>
-            <FaMoneyBill /> Monthly
-          </p>
+          {property.rates.weekly && (
+            <p>
+              <FaMoneyBill /> Weekly
+            </p>
+          )}
+          {property.rates.monthly && (
+            <p>
+              <FaMoneyBill /> Monthly
+            </p>
+          )}
         </div>
 
         <div className="border border-gray-100 mb-5"></div>
@@ -69,7 +73,7 @@ const PropertyCard = ({ property }) => {
         <div className="flex flex-col lg:flex-row justify-between mb-4">
           <div className="flex align-middle gap-2 mb-4 lg:mb-0">
             <FaLocationArrow className="text-orange-700" />
-            <span className="text-orange-700"> Boston MA </span>
+            <span className="text-orange-700"> {property.location.city} </span>
           </div>
           <Link
             href="property.html"
